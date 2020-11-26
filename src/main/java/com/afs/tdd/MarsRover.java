@@ -22,6 +22,9 @@ public class MarsRover {
         if(command.equals("M")){
             move();
         }
+        if(command.equals("L")){
+            turnLeft();
+        }
     }
 
     private void move(){
@@ -36,6 +39,12 @@ public class MarsRover {
         }
         if(direction.equals("E")){
             this.locationX = this.locationX + 1;
+        }
+    }
+
+    private void turnLeft(){
+        if(direction.equals("N")){
+            this.direction = "W";
         }
     }
 
