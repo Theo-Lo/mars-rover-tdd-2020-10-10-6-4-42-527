@@ -11,7 +11,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, "N");
 
         //when
-        marsRover.executeCommands("N");
+        marsRover.executeCommands("M");
 
         //then
         assertEquals(0, marsRover.getLocationX());
