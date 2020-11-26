@@ -28,6 +28,9 @@ public class MarsRover {
         if(direction.equals("N")){
             this.locationY = this.locationY + 1;
         }
+        if(direction.equals("W")){
+            this.locationX = this.locationX - 1;
+        }
     }
 
     public int getLocationX() {
