@@ -73,6 +73,10 @@ public class MarsRover {
             this.direction = "N";
             return;
         }
+        if(direction.equals("S")){
+            this.direction = "W";
+            return;
+        }
     }
 
     public int getLocationX() {
