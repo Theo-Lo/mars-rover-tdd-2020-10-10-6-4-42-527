@@ -31,6 +31,9 @@ public class MarsRover {
         if(direction.equals("W")){
             this.locationX = this.locationX - 1;
         }
+        if(direction.equals("S")){
+            this.locationY = this.locationY - 1;
+        }
     }
 
     public int getLocationX() {
