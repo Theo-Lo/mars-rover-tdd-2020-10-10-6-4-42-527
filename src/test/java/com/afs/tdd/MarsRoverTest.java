@@ -174,16 +174,16 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_return_1_0_E_when_executeCommands_given_0_0_N_and_RM(){
+    public void should_return_minus_1_1_N_when_executeCommands_given_0_0_N_and_MLMR(){
         //given
         MarsRover marsRover = new MarsRover(0, 0, "N");
 
         //when
-        marsRover.executeCommands("RM");
+        marsRover.executeCommands("MLMR");
 
         //then
-        assertEquals(1, marsRover.getLocationX());
-        assertEquals(0, marsRover.getLocationY());
-        assertEquals("E", marsRover.getDirection());
+        assertEquals(-1, marsRover.getLocationX());
+        assertEquals(1, marsRover.getLocationY());
+        assertEquals("N", marsRover.getDirection());
     }
 }
