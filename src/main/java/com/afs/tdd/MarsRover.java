@@ -7,6 +7,9 @@ public class MarsRover {
     private int locationY;
     private String direction;
 
+    // add constant variable with class
+    // remove useless files
+    // change test name
     public MarsRover(int locationX, int locationY, String direction){
         this.locationX = locationX;
         this.locationY = locationY;
@@ -53,16 +56,16 @@ public class MarsRover {
         switch (direction) {
             case "N":
                 this.direction = "W";
-                return;
+                break;
             case "W":
                 this.direction = "S";
-                return;
+                break;
             case "S":
                 this.direction = "E";
-                return;
+                break;
             case "E":
                 this.direction = "N";
-                return;
+                break;
         }
     }
 
@@ -70,16 +73,16 @@ public class MarsRover {
         switch (direction) {
             case "N":
                 this.direction = "E";
-                return;
+                break;
             case "W":
                 this.direction = "N";
-                return;
+                break;
             case "S":
                 this.direction = "W";
-                return;
+                break;
             case "E":
                 this.direction = "S";
-                return;
+                break;
         }
     }
 
