@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MarsRoverTest {
     @Test
-    public void should_return_y_plus_1_when_executeCommands_given_0_0_N_and_M(){
+    public void should_return_0_1_N_when_executeCommands_given_0_0_N_and_M(){
         //given
         MarsRover marsRover = new MarsRover(0, 0, "N");
 
@@ -20,7 +20,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_return_x_minus_1_when_executeCommands_given_0_0_W_and_M(){
+    public void should_return_minus_1_0_W_when_executeCommands_given_0_0_W_and_M(){
         //given
         MarsRover marsRover = new MarsRover(0, 0, "W");
 
@@ -34,7 +34,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_return_y_minus_1_when_executeCommands_given_0_0_S_and_M(){
+    public void should_return_0_minus_1_S_when_executeCommands_given_0_0_S_and_M(){
         //given
         MarsRover marsRover = new MarsRover(0, 0, "S");
 
@@ -48,7 +48,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_return_x_plus_1_when_executeCommands_given_0_0_E_and_M(){
+    public void should_return_1_0_E_when_executeCommands_given_0_0_E_and_M(){
         //given
         MarsRover marsRover = new MarsRover(0, 0, "E");
 

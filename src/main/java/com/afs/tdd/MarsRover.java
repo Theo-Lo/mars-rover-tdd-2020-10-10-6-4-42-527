@@ -8,8 +8,6 @@ public class MarsRover {
     private String direction;
 
     // add constant variable with class
-    // remove useless files
-    // change test name
     public MarsRover(int locationX, int locationY, String direction){
         this.locationX = locationX;
         this.locationY = locationY;
