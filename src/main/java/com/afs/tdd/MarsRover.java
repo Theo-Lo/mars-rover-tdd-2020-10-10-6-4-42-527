@@ -1,33 +1,38 @@
 package com.afs.tdd;
 
 import java.util.Arrays;
+import java.util.Objects;
+
+import com.afs.tdd.Action;
 
 public class MarsRover {
     private int locationX;
     private int locationY;
-    private String direction;
+    private Direction direction;
 
     // add constant variable with class
-    public MarsRover(int locationX, int locationY, String direction){
+    public MarsRover(int locationX, int locationY, Direction direction){
         this.locationX = locationX;
         this.locationY = locationY;
         this.direction = direction;
     }
 
     public void executeCommands(String commands) {
-        Arrays.asList(commands.split(""))
-                .forEach(command -> this.executeCommand(command));
+        Arrays.stream(commands.split(""))
+                .map(Action::getAction)
+                .filter(Objects::nonNull)
+                .forEach(this::executeCommand);
     }
 
-    private void executeCommand(String command){
+    private void executeCommand(Action command){
         switch (command) {
-            case "M":
+            case MOVE:
                 move();
                 break;
-            case "L":
+            case LEFT:
                 turnLeft();
                 break;
-            case "R":
+            case RIGHT:
                 turnRight();
                 break;
         }
@@ -35,16 +40,16 @@ public class MarsRover {
 
     private void move(){
         switch (direction) {
-            case "N":
+            case NORTH:
                 this.locationY = this.locationY + 1;
                 break;
-            case "W":
+            case WEST:
                 this.locationX = this.locationX - 1;
                 break;
-            case "S":
+            case SOUTH:
                 this.locationY = this.locationY - 1;
                 break;
-            case "E":
+            case EAST:
                 this.locationX = this.locationX + 1;
                 break;
         }
@@ -52,34 +57,34 @@ public class MarsRover {
 
     private void turnLeft(){
         switch (direction) {
-            case "N":
-                this.direction = "W";
+            case NORTH:
+                this.direction = Direction.WEST;
                 break;
-            case "W":
-                this.direction = "S";
+            case WEST:
+                this.direction = Direction.SOUTH;
                 break;
-            case "S":
-                this.direction = "E";
+            case SOUTH:
+                this.direction = Direction.EAST;
                 break;
-            case "E":
-                this.direction = "N";
+            case EAST:
+                this.direction = Direction.NORTH;
                 break;
         }
     }
 
     private void turnRight(){
         switch (direction) {
-            case "N":
-                this.direction = "E";
+            case NORTH:
+                this.direction = Direction.EAST;
                 break;
-            case "W":
-                this.direction = "N";
+            case WEST:
+                this.direction = Direction.NORTH;
                 break;
-            case "S":
-                this.direction = "W";
+            case SOUTH:
+                this.direction = Direction.WEST;
                 break;
-            case "E":
-                this.direction = "S";
+            case EAST:
+                this.direction = Direction.SOUTH;
                 break;
         }
     }
@@ -92,7 +97,7 @@ public class MarsRover {
         return locationY;
     }
 
-    public String getDirection() {
+    public Direction getDirection() {
         return direction;
     }
 }
