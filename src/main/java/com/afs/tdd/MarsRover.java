@@ -3,14 +3,11 @@ package com.afs.tdd;
 import java.util.Arrays;
 import java.util.Objects;
 
-import com.afs.tdd.Action;
-
 public class MarsRover {
     private int locationX;
     private int locationY;
     private Direction direction;
 
-    // add constant variable with class
     public MarsRover(int locationX, int locationY, Direction direction){
         this.locationX = locationX;
         this.locationY = locationY;
@@ -38,7 +35,7 @@ public class MarsRover {
         }
     }
 
-    private void move(){
+    public void move(){
         switch (direction) {
             case NORTH:
                 this.locationY = this.locationY + 1;
@@ -55,7 +52,7 @@ public class MarsRover {
         }
     }
 
-    private void turnLeft(){
+    public void turnLeft(){
         switch (direction) {
             case NORTH:
                 this.direction = Direction.WEST;
@@ -72,7 +69,7 @@ public class MarsRover {
         }
     }
 
-    private void turnRight(){
+    public void turnRight(){
         switch (direction) {
             case NORTH:
                 this.direction = Direction.EAST;

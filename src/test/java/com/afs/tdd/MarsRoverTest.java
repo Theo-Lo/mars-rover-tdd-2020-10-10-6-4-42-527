@@ -9,9 +9,11 @@ public class MarsRoverTest {
     public void should_return_0_1_N_when_executeCommands_given_0_0_N_and_M(){
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
+        CommandInvoker commandInvoker = new CommandInvoker();
+        commandInvoker.addCommands(Action.MOVE.getActionLabel(), marsRover);
 
         //when
-        marsRover.executeCommands(Action.MOVE.getActionLabel());
+        commandInvoker.executeCommands();
 
         //then
         assertEquals(0, marsRover.getLocationX());
