@@ -1,8 +1,5 @@
 package com.afs.tdd;
 
-import java.util.Arrays;
-import java.util.Objects;
-
 public class MarsRover {
     private int locationX;
     private int locationY;
@@ -12,27 +9,6 @@ public class MarsRover {
         this.locationX = locationX;
         this.locationY = locationY;
         this.direction = direction;
-    }
-
-    public void executeCommands(String commands) {
-        Arrays.stream(commands.split(""))
-                .map(Action::getAction)
-                .filter(Objects::nonNull)
-                .forEach(this::executeCommand);
-    }
-
-    private void executeCommand(Action command){
-        switch (command) {
-            case MOVE:
-                move();
-                break;
-            case LEFT:
-                turnLeft();
-                break;
-            case RIGHT:
-                turnRight();
-                break;
-        }
     }
 
     public void move(){
