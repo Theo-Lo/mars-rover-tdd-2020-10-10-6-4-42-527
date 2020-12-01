@@ -11,7 +11,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
 
         //when
-        marsRover.executeCommands("M");
+        marsRover.executeCommands(Action.MOVE.getActionLabel());
 
         //then
         assertEquals(0, marsRover.getLocationX());
@@ -25,7 +25,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
 
         //when
-        marsRover.executeCommands("M");
+        marsRover.executeCommands(Action.MOVE.getActionLabel());
 
         //then
         assertEquals(-1, marsRover.getLocationX());
@@ -39,7 +39,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
 
         //when
-        marsRover.executeCommands("M");
+        marsRover.executeCommands(Action.MOVE.getActionLabel());
 
         //then
         assertEquals(0, marsRover.getLocationX());
@@ -53,7 +53,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
 
         //when
-        marsRover.executeCommands("M");
+        marsRover.executeCommands(Action.MOVE.getActionLabel());
 
         //then
         assertEquals(1, marsRover.getLocationX());
@@ -67,7 +67,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
 
         //when
-        marsRover.executeCommands("L");
+        marsRover.executeCommands(Action.LEFT.getActionLabel());
 
         //then
         assertEquals(0, marsRover.getLocationX());
@@ -81,7 +81,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
 
         //when
-        marsRover.executeCommands("L");
+        marsRover.executeCommands(Action.LEFT.getActionLabel());
 
         //then
         assertEquals(0, marsRover.getLocationX());
@@ -95,7 +95,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
 
         //when
-        marsRover.executeCommands("L");
+        marsRover.executeCommands(Action.LEFT.getActionLabel());
 
         //then
         assertEquals(0, marsRover.getLocationX());
@@ -109,7 +109,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
 
         //when
-        marsRover.executeCommands("L");
+        marsRover.executeCommands(Action.LEFT.getActionLabel());
 
         //then
         assertEquals(0, marsRover.getLocationX());
@@ -123,7 +123,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
 
         //when
-        marsRover.executeCommands("R");
+        marsRover.executeCommands(Action.RIGHT.getActionLabel());
 
         //then
         assertEquals(0, marsRover.getLocationX());
@@ -137,7 +137,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
 
         //when
-        marsRover.executeCommands("R");
+        marsRover.executeCommands(Action.RIGHT.getActionLabel());
 
         //then
         assertEquals(0, marsRover.getLocationX());
@@ -151,7 +151,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
 
         //when
-        marsRover.executeCommands("R");
+        marsRover.executeCommands(Action.RIGHT.getActionLabel());
 
         //then
         assertEquals(0, marsRover.getLocationX());
@@ -165,7 +165,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
 
         //when
-        marsRover.executeCommands("R");
+        marsRover.executeCommands(Action.RIGHT.getActionLabel());
 
         //then
         assertEquals(0, marsRover.getLocationX());
@@ -179,7 +179,11 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
 
         //when
-        marsRover.executeCommands("MLMR");
+        String concatedCommand = Action.MOVE.getActionLabel()
+                +Action.LEFT.getActionLabel()
+                +Action.MOVE.getActionLabel()
+                +Action.RIGHT.getActionLabel();
+        marsRover.executeCommands(concatedCommand);
 
         //then
         assertEquals(-1, marsRover.getLocationX());

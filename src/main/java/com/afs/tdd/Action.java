@@ -18,4 +18,7 @@ public enum Action {
         }
         return null;
     }
+    public String getActionLabel(){
+        return this.actionLabel;
+    }
 }
